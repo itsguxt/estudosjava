@@ -1,33 +1,21 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        Banco banco = new Banco();
+        banco.depositar(1000); //máximo é 500
+        banco.depositar(25); //mínimo é 50
+        banco.depositar(-50); //Erro, valor negativo
+        banco.depositar(500); //Ok
+        banco.depositar(500); //Ok
+        banco.depositar(500); //Ok
 
-        //aprovado
-        Aluno aluno = new Aluno();
-        aluno.nome = "Gustavo";
-        aluno.notaMateria1 = 7;
-        aluno.notaMateria2 = 7;
-        aluno.notaMateria3 = 7;
-        aluno.faltas = 20;
-        aluno.checarAprovacao();
+        banco.sacar(1000); //máximo é 500
+        banco.sacar(25); //mínimo é 50
+        banco.sacar(-50); //Erro, valor negativo
+        banco.sacar(100); //Ok
+        banco.sacar(200); //Ok
+        banco.sacar(300); //Ok
 
-        //reprovado por nota
-        Aluno aluno1 = new Aluno();
-        aluno1.nome = "Gustavo";
-        aluno1.notaMateria1 = 7;
-        aluno1.notaMateria2 = 7;
-        aluno1.notaMateria3 = 6;
-        aluno1.faltas = 20;
-        aluno1.checarAprovacao();
-
-        //reprovado por falta
-        Aluno aluno2 = new Aluno();
-        aluno2.nome = "Gustavo";
-        aluno2.notaMateria1 = 7;
-        aluno2.notaMateria2 = 7;
-        aluno2.notaMateria3 = 7;
-        aluno2.faltas = 21;
-
-        aluno2.checarAprovacao();
+        banco.obterSaldo();
 
     }
 
