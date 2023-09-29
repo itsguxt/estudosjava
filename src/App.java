@@ -1,22 +1,24 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Banco banco = new Banco();
-        banco.depositar(1000); //máximo é 500
-        banco.depositar(25); //mínimo é 50
-        banco.depositar(-50); //Erro, valor negativo
-        banco.depositar(500); //Ok
-        banco.depositar(500); //Ok
-        banco.depositar(500); //Ok
+        Controle controle = new Controle();
+        controle.estadoTV = false;
+        controle.canalTV = 1;
+        controle.volumeTV = 1;
 
-        banco.sacar(1000); //máximo é 500
-        banco.sacar(25); //mínimo é 50
-        banco.sacar(-50); //Erro, valor negativo
-        banco.sacar(100); //Ok
-        banco.sacar(200); //Ok
-        banco.sacar(300); //Ok
+        controle.voltarCanal();
+        controle.diminuirVolume();
+        controle.diminuirVolume();
 
-        banco.obterSaldo();
+        controle.escolherCanal(50);
+        controle.passarCanal();
 
+        controle.escolherCanal(-100);
+        controle.escolherCanal(55);
+
+        controle.volumeTV = 98;
+        controle.aumentarVolume();
+        controle.aumentarVolume();
+        controle.aumentarVolume();
     }
 
 }
